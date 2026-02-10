@@ -1,5 +1,5 @@
-const Home = () => (
-    <div></div>
+const Services = () => (
+  <div>Services</div>
 )
 
-export default Home
+export default Services

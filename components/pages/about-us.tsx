@@ -1,5 +1,5 @@
 const AboutUs = () => (
-  <div></div>
+  <div>About Us</div>
 )
 
 export default AboutUs
