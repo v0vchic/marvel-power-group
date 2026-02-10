@@ -38,11 +38,6 @@
   src: url('../public/fonts/sofia-pro/SofiaPro-Bold.woff2') format('woff2');
 }
 
-* {
-  box-sizing: border-box;
-  outline: none;
-}
-
 :root {
   color: var(--color-dark);
 }
@@ -56,9 +51,15 @@ body {
 h1 {
   font-family: 'Alata', sans-serif;
   font-size: 115px;
+  color: var(--color-primary);
 }
 
 h2 {
+  font-family: 'Alata', sans-serif;
+  font-size: 25px;
+}
+
+h3 {
   font-family: 'Alata', sans-serif;
   font-size: 90px;
 }

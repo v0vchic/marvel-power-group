@@ -15,33 +15,31 @@ export const Header = () => {
     window.addEventListener('scroll', handleScroll)
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
+
   return (
-    <header className={`fixed top-0 left-0 w-full z-50 flex items-center justify-between py-7 px-[264px] transition-colors duration-300 ${
-      isScrolled ? 'bg-white shadow-md' : 'bg-transparent'
-    }`}
+    <header
+      className={`fixed top-0 left-0 w-full z-50 py-7 transition-colors duration-300 ${
+        isScrolled ? 'bg-primary' : 'bg-transparent'
+      }`}
     >
-      <Link href="/">
-        <Image
-          src="/images/logo.svg"
-          alt="Marvel Power Group"
-          width={146}
-          height={55}
-        />
-      </Link>
+      <div className="w-full grid grid-cols-6">
+        <div className="col-span-4 col-start-2 flex items-center justify-between">
+          <Link href="/">
+            <Image
+              src="/images/logo.svg"
+              alt="Marvel Power Group"
+              width={146}
+              height={55}
+            />
+          </Link>
 
-      <nav className="flex gap-16 font-normal">
-        <Link href="#about">
-          About
-        </Link>
-
-        <Link href="#services">
-          Services
-        </Link>
-
-        <Link href="#contact">
-          Contact
-        </Link>
-      </nav>
+          <nav className="flex gap-16 font-normal">
+            <Link href="#about">About</Link>
+            <Link href="#services">Services</Link>
+            <Link href="#contact">Contact</Link>
+          </nav>
+        </div>
+      </div>
     </header>
   )
 }
