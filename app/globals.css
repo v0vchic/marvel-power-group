@@ -63,3 +63,29 @@ h3 {
   font-family: 'Alata', sans-serif;
   font-size: 90px;
 }
+
+h4 {
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 42px;
+}
+
+.custom-list {
+  line-height: 20px;
+  list-style: none;
+}
+
+.custom-list li {
+  display: flex;
+  gap: 15px;
+  align-items: start;
+}
+
+.custom-list li::before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  margin-top: 6px;
+  background-color: var(--color-primary);
+  flex-shrink: 0;
+}

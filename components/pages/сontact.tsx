@@ -1,5 +1,5 @@
 const Contact = () => (
-  <div>Contact</div>
+  <div className="min-h-screen">Contact</div>
 )
 
 export default Contact
