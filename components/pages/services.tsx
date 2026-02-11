@@ -1,8 +1,42 @@
+import Link from 'next/link'
 import { Wrapper } from '@/components/layout/Wrapper'
 import { Arrow } from '@/components/ui/icons/Arrow'
 
+const SERVICES = [
+  {
+    title: 'Enterprise Strategy',
+    items: [
+      'Procurement and investment diligence',
+      'Customer engagement and retention',
+      'Renewable, DER, and EV program structuring',
+      'Reliability planning and reporting',
+    ],
+    link: '#',
+  },
+  {
+    title: 'Wholesale Power',
+    items: [
+      'Commodity advisory and RFPs',
+      'Energy, capacity, REC, RIN, and LCFS placement',
+      'Enterprise PPA structuring',
+      'Contract extensions and re-packaging',
+    ],
+    link: '#',
+  },
+  {
+    title: 'Market Development',
+    items: [
+      'New venture setup',
+      'Demand planning and acquisition',
+      'Project development and regulatory support',
+      'Partnership structuring',
+    ],
+    link: '#',
+  },
+]
+
 const Services = () => (
-  <section className="relative bg-accent min-h-screen">
+  <section id="services" className="relative bg-accent min-h-screen">
     <Wrapper className="flex flex-col pt-24 pb-23">
       <h3>Services</h3>
 
@@ -17,38 +51,19 @@ const Services = () => (
       </p>
 
       <div className="grid grid-cols-3 gap-20 mt-12">
-        <div className="max-w-84">
-          <h4 className="max-w-71">Enterprise Strategy</h4>
-          <ul className="custom-list mt-8 space-y-3 leading-5">
-            <li>Procurement and investment diligence</li>
-            <li>Customer engagement and retention</li>
-            <li>Renewable, DER, and EV program structuring</li>
-            <li>Reliability planning and reporting</li>
-          </ul>
-          <Arrow className="mt-10" />
-        </div>
-
-        <div className="max-w-84">
-          <h4 className="max-w-71">Wholesale Power</h4>
-          <ul className="custom-list mt-8 space-y-3 leading-5">
-            <li>Commodity advisory and RFPs</li>
-            <li>Energy, capacity, REC, RIN, and LCFS placement</li>
-            <li>Enterprise PPA structuring</li>
-            <li>Contract extensions and re-packaging</li>
-          </ul>
-          <Arrow className="mt-10" />
-        </div>
-
-        <div className="max-w-84">
-          <h4>Market Development</h4>
-          <ul className="custom-list mt-8 space-y-3 leading-5">
-            <li>New venture setup</li>
-            <li>Demand planning and acquisition</li>
-            <li>Project development and regulatory support</li>
-            <li>Partnership structuring</li>
-          </ul>
-          <Arrow className="mt-10" />
-        </div>
+        {SERVICES.map((service, index) => (
+          <div key={service.title} className="max-w-84">
+            <h4 className={index < 2 ? 'max-w-71' : ''}>{service.title}</h4>
+            <ul className="custom-list mt-8 space-y-3 leading-5">
+              {service.items.map(item => (
+                <li key={item}>{item}</li>
+              ))}
+            </ul>
+            <Link href={service.link} className="inline-block">
+              <Arrow className="mt-10 ml-5" />
+            </Link>
+          </div>
+        ))}
       </div>
 
       <p className="max-w-210 mt-17">
@@ -60,7 +75,7 @@ const Services = () => (
 
     <div className="absolute bottom-0 left-0 right-0 translate-y-1/2 z-10">
       <div className="w-full grid grid-cols-6 items-end">
-        {Array.from({ length: 6 }).map((_, index) => (
+        {Array.from({ length: 5 }).map((_, index) => (
           <div
             key={index}
             className="w-px h-4 bg-dark justify-self-end"
