@@ -4,7 +4,8 @@ import * as React from 'react'
 import { useState } from 'react'
 import { Wrapper } from '@/components/layout/Wrapper'
 import { Button } from '@/components/ui/Button'
-import PlugIcon from '@/components/ui/icons/PlugIcon'
+import { PlugIcon } from '@/components/ui/icons/PlugIcon'
+import { Input } from '@/components/ui/Input'
 
 const Contact = () => {
   const [isSubmitted, setIsSubmitted] = useState<boolean>(false)
@@ -14,8 +15,13 @@ const Contact = () => {
     setIsSubmitted(true)
   }
 
+  const [isNameValid, setIsNameValid] = useState(false)
+  const [isEmailValid, setIsEmailValid] = useState(false)
+
+  const isFormValid = isNameValid && isEmailValid
+
   return (
-    <section className="relative bg-black min-h-196 text-primary">
+    <section id="contact" className="relative bg-black min-h-196 text-primary">
       <Wrapper className="flex flex-col pt-24 pb-32">
         <div className="grid grid-cols-2 gap-32">
           <div>
@@ -24,7 +30,7 @@ const Contact = () => {
             <div className="font-bold text-[40px] leading-[42px]">
               <p>Email us here:</p>
               <a
-                href="info@marvelpowergroup.com"
+                href="mailto:info@marvelpowergroup.com"
                 className="text-accent border-b-2 border-accent"
               >
                 info@marvelpowergroup.com
@@ -40,19 +46,9 @@ const Contact = () => {
                       Stay in the loop by getting on our mailing list
                     </p>
                     <form onSubmit={handleSubmit} className="flex flex-col gap-4 items-end">
-                      <input
-                        type="text"
-                        placeholder="NAME *"
-                        required
-                        className="w-full px-4 py-3 bg-white text-black placeholder:text-black outline-none"
-                      />
-                      <input
-                        type="email"
-                        placeholder="E-MAIL *"
-                        required
-                        className="w-full px-4 py-3 bg-white text-black placeholder:text-black outline-none"
-                      />
-                      <Button className="px-26 mt-4" icon={<PlugIcon />}>
+                      <Input type="text" placeholder="NAME *" onValidityChange={setIsNameValid} required />
+                      <Input type="email" placeholder="E-MAIL *" onValidityChange={setIsEmailValid} required />
+                      <Button className="px-26 mt-4" icon={<PlugIcon />} type="submit" disabled={!isFormValid}>
                         SEND
                       </Button>
                     </form>

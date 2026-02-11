@@ -3,7 +3,7 @@
 @theme {
   --color-primary: #FFFFFF;
   --color-dark: #0B0D21;
-  --color-dark-heading: #000000;
+  --color-black: #000000;
   --color-accent: #F6D330;
 
   --breakpoint-mobile: 375px;
@@ -52,11 +52,13 @@ h1 {
   font-family: 'Alata', sans-serif;
   font-size: 115px;
   color: var(--color-primary);
+  line-height: 130px;
 }
 
 h2 {
   font-family: 'Alata', sans-serif;
   font-size: 25px;
+  color: var(--color-primary);
 }
 
 h3 {
