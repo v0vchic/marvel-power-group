@@ -35,7 +35,12 @@ export const Header = () => {
 
           <nav className="flex gap-16 font-normal">
             <Link href="#about">About</Link>
-            <Link href="#services">Services</Link>
+            <Link
+              href="#services"
+              className="border-accent border-b"
+            >
+              Services
+            </Link>
             <Link href="#contact">Contact</Link>
           </nav>
         </div>
