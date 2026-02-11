@@ -59,8 +59,8 @@ const Services = () => (
                 <li key={item}>{item}</li>
               ))}
             </ul>
-            <Link href={service.link} className="inline-block">
-              <Arrow className="mt-10 ml-5" />
+            <Link href={service.link} className="inline-block mt-10 ml-5">
+              <Arrow />
             </Link>
           </div>
         ))}
