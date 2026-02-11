@@ -1,4 +1,4 @@
-const PlugIcon = ({ className = '' }) => {
+export const PlugIcon = ({ className = '' }) => {
   return (
     <svg
       viewBox="0 0 24 24"
@@ -19,5 +19,3 @@ const PlugIcon = ({ className = '' }) => {
     </svg>
   )
 }
-
-export default PlugIcon
