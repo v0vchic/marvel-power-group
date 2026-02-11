@@ -3,7 +3,7 @@ import { Wrapper } from '@/components/layout/Wrapper'
 
 const AboutUs = () => {
   return (
-    <div className="relative">
+    <section id="about" className="relative">
       <Wrapper className="flex flex-col pt-24 pb-35">
         <h3>About Us</h3>
 
@@ -49,7 +49,7 @@ const AboutUs = () => {
         </div>
       </div>
 
-    </div>
+    </section>
   )
 }
 
