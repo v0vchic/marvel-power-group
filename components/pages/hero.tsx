@@ -7,7 +7,7 @@ import { PlugIcon } from '@/components/ui/icons/PlugIcon'
 
 const Hero = () => {
   return (
-    <section id="hero" className="relative min-h-130 tablet:min-h-180 desktop:min-h-270 anchor-offset">
+    <section id="hero" className="relative min-h-screen mobile:min-h-130 tablet:min-h-180 desktop:min-h-270 anchor-offset">
       <Image
         src="/images/hero.jpg"
         alt="Power energy background"
@@ -18,7 +18,7 @@ const Hero = () => {
 
       <div className="absolute bottom-0 left-0 right-0 h-full tablet:h-180 desktop:h-214 bg-gradient-to-t from-black to-transparent" />
 
-      <Wrapper className="relative flex flex-col gap-11 tablet:gap-16 desktop:gap-20 items-center justify-center pt-30 tablet:pt-60 desktop:pt-103 pb-17.5 tablet:pb-50 desktop:pb-75">
+      <Wrapper className="relative flex flex-col gap-11 tablet:gap-16 desktop:gap-20 items-center justify-center pt-52 tablet:pt-84 desktop:pt-103 pb-17.5 tablet:pb-50 desktop:pb-75">
         <div className="flex flex-col gap-4.5 tablet:gap-7 desktop:gap-10 text-center tablet:max-w-200 desktop:max-w-278">
           <h1>Marvel Power Group</h1>
           <h2>
