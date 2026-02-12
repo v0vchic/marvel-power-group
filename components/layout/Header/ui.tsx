@@ -71,7 +71,7 @@ export const Header = () => {
           <Button
             ref={buttonRef}
             onClick={toggleMenu}
-            className="tablet:hidden bg-transparent"
+            className="tablet:hidden bg-transparent focus-visible:outline-2 focus-visible:outline-accent"
             aria-label="Toggle menu"
             aria-expanded={isMenuOpen}
             aria-controls="mobile-menu"
