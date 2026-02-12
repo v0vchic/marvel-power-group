@@ -7,7 +7,7 @@ import { PlugIcon } from '@/components/ui/icons/PlugIcon'
 
 const Hero = () => {
   return (
-    <section id="hero" className="relative min-h-screen mobile:min-h-130 tablet:min-h-180 desktop:min-h-270 anchor-offset">
+    <section id="hero" className="relative mobile:min-h-130 tablet:min-h-180 desktop:min-h-270 anchor-offset">
       <Image
         src="/images/hero.jpg"
         alt="Power energy background"
