@@ -21,42 +21,44 @@ const Contact = () => {
   const isFormValid = isNameValid && isEmailValid
 
   return (
-    <section id="contact" className="relative bg-black min-h-196 text-primary">
-      <Wrapper className="flex flex-col pt-24 pb-32">
-        <div className="grid grid-cols-2 gap-32">
+    <section id="contact" className="relative bg-black desktop:min-h-196 text-primary anchor-offset">
+      <Wrapper className="flex flex-col pt-14 tablet:pt-24 pb-17.5 tablet:pb-32">
+        <div className="flex flex-col tablet:flex-row gap-11.5 lg:gap-32">
           <div>
             <h3>Contact</h3>
-            <div className="w-25 h-1.5 bg-accent my-10" />
-            <div className="font-bold text-[40px] leading-[42px]">
+
+            <div className="w-16.5 h-1 mobile:w-25 mobile:h-1.5 bg-accent mt-9 mb-6 tablet:my-10" />
+
+            <div className="font-bold text-contact">
               <p>Email us here:</p>
               <a
                 href="mailto:info@marvelpowergroup.com"
-                className="text-accent border-b-2 border-accent"
+                className="text-accent border-b-2 border-accent break-words"
               >
                 info@marvelpowergroup.com
               </a>
             </div>
           </div>
 
-          <div>
+          <div className="w-full">
             {!isSubmitted
               ? (
-                  <>
-                    <p className="max-w-75 font-bold text-[40px] leading-[42px] mb-12">
+                  <div className="flex flex-col gap-6 tablet:gap-10">
+                    <p className="max-w-75 font-bold text-contact">
                       Stay in the loop by getting on our mailing list
                     </p>
-                    <form onSubmit={handleSubmit} className="flex flex-col gap-4 items-end">
+                    <form onSubmit={handleSubmit} className="flex flex-col gap-2.5 tablet:gap-4 items-end">
                       <Input type="text" placeholder="NAME *" onValidityChange={setIsNameValid} required />
                       <Input type="email" placeholder="E-MAIL *" onValidityChange={setIsEmailValid} required />
-                      <Button className="px-26 mt-4" icon={<PlugIcon />} type="submit" disabled={!isFormValid}>
+                      <Button className="px-17 tablet:px-18 desktop:px-26" icon={<PlugIcon />} type="submit" disabled={!isFormValid}>
                         SEND
                       </Button>
                     </form>
-                  </>
+                  </div>
                 )
               : (
-                  <div className="text-primary flex flex-col gap-12">
-                    <p className="max-w-85 font-bold text-[40px] leading-12.5">
+                  <div className="text-primary flex flex-col gap-5 tablet:gap-12">
+                    <p className="max-w-85 font-bold text-contact">
                       Thank you.
                       <br />
                       Your info has been
@@ -67,7 +69,7 @@ const Contact = () => {
                       {' '}
                       <a
                         href="mailto:info@marvelpowergroup.com"
-                        className="text-accent border-b border-accent"
+                        className="text-accent border-b border-accent break-words"
                       >
                         info@marvelpowergroup.com
                       </a>
@@ -80,15 +82,16 @@ const Contact = () => {
         </div>
       </Wrapper>
 
-      <div className="absolute bottom-23 left-0 right-0">
+      <div className="absolute bottom-23 left-0 right-0 hidden desktop:block">
         <div className="w-full grid grid-cols-6 items-end">
-          {Array.from({ length: 5 }).map((_, index) => (
+          {Array.from({ length: 5 }).map((_, i) => (
             <div
-              key={index}
-              className={`w-px justify-self-end ${index === 2 ? 'h-25 bg-accent' : 'h-4 bg-primary'
+              key={`divider-${i}`}
+              className={`w-px justify-self-end ${i === 2 ? 'h-25 bg-accent' : 'h-4 bg-primary'
               }`}
             />
           ))}
+
         </div>
       </div>
     </section>

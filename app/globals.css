@@ -44,32 +44,35 @@
 
 body {
   font-family: 'Sofia Pro', sans-serif;
-  font-weight: 300;
-  font-size: 18px;
+  font-size: clamp(0.875rem, 0.82rem + 0.25vw, 1.125rem);
+  line-height: clamp(1rem, 0.95rem + 0.25vw, 1.25rem);
 }
+
 
 h1 {
   font-family: 'Alata', sans-serif;
-  font-size: 115px;
   color: var(--color-primary);
-  line-height: 130px;
+  font-size: clamp(3.125rem, 2.31rem + 4.06vw, 7.1875rem);
+  line-height: clamp(3.75rem, 2.88rem + 4.38vw, 8.125rem);
 }
 
 h2 {
   font-family: 'Alata', sans-serif;
-  font-size: 25px;
   color: var(--color-primary);
+  font-size: clamp(0.875rem, 0.74rem + 0.69vw, 1.5625rem);
+  line-height: clamp(1.5625rem, 1.44rem + 0.63vw, 2.1875rem);
 }
 
 h3 {
   font-family: 'Alata', sans-serif;
-  font-size: 90px;
+  font-size: clamp(2.5rem, 1.88rem + 3.13vw, 5.625rem);
+  line-height: clamp(2.5rem, 1.75rem + 3.75vw, 6.25rem);
 }
 
-h4 {
+h4, .text-contact {
   font-weight: 700;
-  font-size: 40px;
-  line-height: 42px;
+  font-size: clamp(1.5625rem, 1.38rem + 0.94vw, 2.5rem);
+  line-height: clamp(2.1875rem, 2.10rem + 0.44vw, 2.625rem);
 }
 
 .custom-list {
@@ -90,4 +93,14 @@ h4 {
   margin-top: 6px;
   background-color: var(--color-primary);
   flex-shrink: 0;
+}
+
+.burger-menu-link {
+  font-size: 40px;
+}
+
+@layer utilities {
+  .anchor-offset {
+    @apply scroll-mt-[88px] tablet:scroll-mt-[95px] desktop:scroll-mt-[98px];
+  }
 }
