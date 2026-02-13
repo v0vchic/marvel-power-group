@@ -26,7 +26,7 @@ const Hero = () => {
           </h2>
         </div>
         <Link href="#contact">
-          <Button className="px-10" icon={<PlugIcon />}>
+          <Button className="px-10" icon={<PlugIcon className="text-black" />}>
             CONTACT US
           </Button>
         </Link>
