@@ -17,7 +17,7 @@ const Contact = () => {
 
   const isFormValid = isNameValid && isEmailValid
 
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.SyntheticEvent<HTMLFormElement>) => {
     e.preventDefault()
 
     try {
@@ -29,7 +29,7 @@ const Contact = () => {
 
       if (response.status === 200) {
         setIsSubmitted(true)
-        setToast(<Toast title="Success!" message="You have been successfully subscribed" variant="success" />)
+        setToast(<Toast title="Success" message="You have been successfully subscribed" variant="success" />)
       }
       else if (response.status === 400) {
         setToast(<Toast title="Error" message="Please check your input" variant="error" />)
