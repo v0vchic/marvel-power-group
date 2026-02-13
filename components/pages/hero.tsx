@@ -26,7 +26,7 @@ const Hero = () => {
           </h2>
         </div>
         <Link href="#contact">
-          <Button className="px-10" icon={<PlugIcon />}>
+          <Button className="px-10" icon={<PlugIcon className="text-black" />}>
             CONTACT US
           </Button>
         </Link>
@@ -35,9 +35,9 @@ const Hero = () => {
 
       <div className="absolute bottom-14 left-0 right-0 hidden desktop:flex flex-col items-center gap-12.5">
         <div className="w-full grid grid-cols-6 items-end">
-          {Array.from({ length: 5 }).map((_, i) => (
+          {[0, 1, 2, 3, 4].map(i => (
             <div
-              key={`divider-${i}`}
+              key={i}
               className={`w-px justify-self-end ${
                 i === 2 ? 'h-25 bg-accent' : 'h-4 bg-primary'
               }`}

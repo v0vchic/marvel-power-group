@@ -17,6 +17,7 @@ const AboutUs = () => {
               alt="About Us"
               fill
               className="object-cover"
+              sizes="(max-width: 1024px) 100vw, 486px"
             />
           </div>
 
@@ -48,9 +49,9 @@ const AboutUs = () => {
 
       <div className="absolute bottom-0 left-0 right-0 hidden desktop:block translate-y-1/2 z-10">
         <div className="w-full grid grid-cols-6 items-end">
-          {Array.from({ length: 5 }, (_, i) => i).map(i => (
+          {[0, 1, 2, 3, 4].map(i => (
             <div
-              key={`divider-${i}`}
+              key={i}
               className="w-px h-4 bg-dark justify-self-end"
             />
           ))}
