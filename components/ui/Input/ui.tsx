@@ -1,7 +1,6 @@
 'use client'
 import type { ChangeEvent, FC, FocusEvent } from 'react'
 import {
-
   useEffect,
   useId,
   useState,
@@ -12,6 +11,7 @@ interface InputProps {
   placeholder?: string
   required?: boolean
   onValidityChange?: (isValid: boolean) => void
+  onValueChange?: (value: string) => void
 }
 
 export const Input: FC<InputProps> = ({
@@ -19,6 +19,7 @@ export const Input: FC<InputProps> = ({
   placeholder = '',
   required = false,
   onValidityChange,
+  onValueChange,
 }) => {
   const [value, setValue] = useState('')
   const [error, setError] = useState('')
@@ -43,6 +44,7 @@ export const Input: FC<InputProps> = ({
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     const val = e.target.value
     setValue(val)
+    onValueChange?.(val)
     const validationError = validate(val)
     setError(validationError)
   }
