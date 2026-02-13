@@ -5,6 +5,7 @@
   --color-dark: #0B0D21;
   --color-black: #000000;
   --color-accent: #F6D330;
+  --color-silver: #dbdfe1;
 
   --breakpoint-mobile: 375px;
   --breakpoint-tablet: 768px;
@@ -104,3 +105,19 @@ h4, .text-contact {
     @apply scroll-mt-[88px] tablet:scroll-mt-[95px] desktop:scroll-mt-[98px];
   }
 }
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.25s ease-out;
+}
+
