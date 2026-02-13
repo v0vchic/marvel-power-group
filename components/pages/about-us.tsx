@@ -17,6 +17,7 @@ const AboutUs = () => {
               alt="About Us"
               fill
               className="object-cover"
+              sizes="(max-width: 1024px) 100vw, 486px"
             />
           </div>
 
